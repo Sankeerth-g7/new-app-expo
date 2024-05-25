@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, FlatList } from 'react-native';
 import useSWR from 'swr'; // Import the useSWR hook
-import SwipeButton from '../../src/components/SwipeButton';
-import NewsCard from '../../src/components/NewsCard';
+import SwipeButton from '../src/components/SwipeButton';
+import NewsCard from '../src/components/NewsCard';
 // import { NEWS_API_KEY } from '@env';
 
 
@@ -18,7 +18,7 @@ const App = () => {
   };
 
   // Define the API endpoint
-  const apiUrl = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${NEWS_API_KEY}`;// api for fetching should keep api key in env(TODO) 
+  const apiUrl = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=APIKEY`;// api for fetching should keep api key in env(TODO) 
 
   // Use the useSWR hook to fetch data from the API endpoint
   const { data, error, isValidating: isLoading } = useSWR(fetchNews ? apiUrl : null, fetcher);
